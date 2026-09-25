@@ -31,7 +31,6 @@ void dequeue() {
     }
 
     struct Node* temp = front;
-    printf("%d dequeued\n", temp->data);
     front = front->next;
 
     if (front == NULL) {
@@ -41,13 +40,31 @@ void dequeue() {
     free(temp);
 }
 
+void traverse() {
+    if (front == NULL) {
+        printf("Queue is empty\n");
+        return;
+    }
+
+    struct Node* temp = front;
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
 int main() {
     enqueue(10);
     enqueue(20);
     enqueue(30);
+    traverse();
 
-    dequeue();  
-    dequeue();  
+    dequeue();
+    traverse();
+
+    dequeue();
+    traverse();
 
     return 0;
 }
