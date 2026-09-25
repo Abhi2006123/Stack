@@ -40,19 +40,7 @@ void dequeue() {
     free(temp);
 }
 
-void traverse() {
-    if (front == NULL) {
-        printf("Queue is empty\n");
-        return;
-    }
 
-    struct Node* temp = front;
-    while (temp != NULL) {
-        printf("%d ", temp->data);
-        temp = temp->next;
-    }
-    printf("\n");
-}
 
 int main() {
     enqueue(10);
